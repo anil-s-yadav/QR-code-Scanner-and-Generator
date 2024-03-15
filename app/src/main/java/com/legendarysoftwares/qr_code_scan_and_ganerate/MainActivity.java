@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                     loadfrag(new GanerateQr(),1);
                 } else if (id==R.id.scan_tab) {
                     loadfrag(new QRScaner(),1);
+                } else if (id==R.id.history_tab) {
+                    loadfrag(new FragmentHistory(),1);
                 }
                 return true;
             }

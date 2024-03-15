@@ -3,14 +3,14 @@
 
     <item
         android:id="@+id/ganerate_tab"
-        android:icon="@drawable/gen_menu"
+        android:icon="@drawable/menu_generate"
         android:title="Ganerate" />
     <item
         android:id="@+id/scan_tab"
-        android:icon="@drawable/scan_menu"
+        android:icon="@drawable/menu_scan"
         android:title="Scan" />
     <item
         android:id="@+id/history_tab"
-        android:icon="@drawable/baseline_history_24"
+        android:icon="@drawable/menu_history"
         android:title="History" />
 </menu>

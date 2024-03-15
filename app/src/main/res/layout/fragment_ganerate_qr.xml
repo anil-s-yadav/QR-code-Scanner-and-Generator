@@ -6,12 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".GanerateQr">
 
-    <!-- TODO: Update blank fragment layout -->
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="242dp"
+        android:layout_height="wrap_content"
         android:background="#673AB7">
 
         <TextView
@@ -31,7 +29,8 @@
             android:id="@+id/imageView"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.939"
@@ -41,15 +40,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
+            android:layout_marginTop="30dp"
             app:layout_constraintBottom_toTopOf="@+id/radioGroup"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5">
 
             <EditText
                 android:id="@+id/input"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/textbox"
@@ -57,6 +58,7 @@
                 android:hint="Enter scan data"
                 android:inputType="text"
                 android:padding="10dp"
+                android:layout_marginBottom="8dp"
                 android:textColorHint="#C1BDBD"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -81,7 +83,7 @@
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="70dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,8 +94,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:selectAllOnFocus="true"
+                android:checked="true"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:drawableStart="@drawable/menu_scan"
+                android:drawablePadding="6dp"
                 android:text="QR Code"
+                android:background="@drawable/radio_selector"
+                android:drawableTint="@color/white"
+                android:button="@android:color/transparent"
+                android:layout_marginEnd="20dp"
                 android:textColor="@color/white" />
 
             <RadioButton
@@ -102,32 +112,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="Barcode"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/radio_selector"
+                android:drawableStart="@drawable/barcode_read"
+                android:drawablePadding="6dp"
+                android:button="@android:color/transparent"
                 android:textColor="@color/white" />
         </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/home_bg">
 
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
+            android:layout_marginTop="204dp"
+            android:background="@drawable/home_bg">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:paddingTop="8dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -136,412 +144,348 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Custom Ganerate"
-                    android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
-                <LinearLayout
+
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    >
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="44dp"
-                        android:backgroundTint="#FFE9EB"
-                        app:cardCornerRadius="18dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/email"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/mail"
-                                app:layout_constraintBottom_toTopOf="@+id/emailtext"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/mail"/>
                             <TextView
-                                android:id="@+id/emailtext"
-                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="TextView"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/email"
-                                app:layout_constraintStart_toStartOf="@+id/email"
-                                app:layout_constraintTop_toBottomOf="@+id/email" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="40dp"
-                        android:backgroundTint="#F2FFFF"
-                        app:cardCornerRadius="18dp">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#F2FFFF"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/phone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/call"
-                                app:layout_constraintBottom_toTopOf="@+id/phonetext"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/call"/>
                             <TextView
-                                android:id="@+id/phonetext"
-                                android:layout_width="wrap_content"
+                                android:id="@+id/tv_amenitvfgnies_00"
                                 android:layout_height="wrap_content"
-                                android:text="Phone"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/phone"
-                                app:layout_constraintStart_toStartOf="@+id/phone"
-                                app:layout_constraintTop_toBottomOf="@+id/phone" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="40dp"
-                        android:backgroundTint="#F0FFF3"
-                        app:cardCornerRadius="18dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#F0FFF3"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/massage"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/massage"
-                                app:layout_constraintBottom_toTopOf="@+id/massagetext"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/massage"/>
                             <TextView
-                                android:id="@+id/massagetext"
-                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Massage"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/massage"
-                                app:layout_constraintStart_toStartOf="@+id/massage"
-                                app:layout_constraintTop_toBottomOf="@+id/massage" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="44dp"
-                        android:backgroundTint="#F9F9FA"
-                        app:cardCornerRadius="18dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#F9F9FA"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/Text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/text"
-                                app:layout_constraintBottom_toTopOf="@+id/Text_text"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/text"/>
                             <TextView
-                                android:id="@+id/Text_text"
-                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Text"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/Text"
-                                app:layout_constraintStart_toStartOf="@+id/Text"
-                                app:layout_constraintTop_toBottomOf="@+id/Text" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="40dp"
-                        android:backgroundTint="#FFFEE5"
-                        app:cardCornerRadius="18dp">
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#FFFEE5"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/uthgfn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/link"
-                                app:layout_constraintBottom_toTopOf="@+id/uthgfntext"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/link"/>
                             <TextView
-                                android:id="@+id/uthgfntext"
+                                android:layout_height="wrap_content"
                                 android:layout_width="wrap_content"
-                                android:layout_height="11dp"
-                                android:text="URL"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/uthgfn"
-                                app:layout_constraintStart_toStartOf="@+id/uthgfn"
-                                app:layout_constraintTop_toBottomOf="@+id/uthgfn" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:text="Email"
+                                />
+                        </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="40dp"
-                        android:backgroundTint="#FFEDFC"
-                        app:cardCornerRadius="18dp">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#FFEDFC"
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/url"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:src="@drawable/wifi"
-                                app:layout_constraintBottom_toTopOf="@+id/urltext"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
+                                android:src="@drawable/wifi"/>
                             <TextView
-                                android:id="@+id/urltext"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Wifi"
-                                android:textSize="8sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/url"
-                                app:layout_constraintStart_toStartOf="@+id/url"
-                                app:layout_constraintTop_toBottomOf="@+id/url" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                                android:src="@drawable/massage"/>
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="75dp"
+                            android:layout_width="75dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/item_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/text"/>
+                            <TextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:text="Email"
+                                />
+                        </LinearLayout>
 
-                </LinearLayout>
+                    </TableRow>
+
+
+                </TableLayout>
+
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="14dp"
                     android:gravity="center_horizontal"
                     android:text="Social" />
 
-                <LinearLayout
+
+                <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    >
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#F6F0FF"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#F6F0FF"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/linkedin"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/text"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/massage"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#EEF3FD"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#EEF3FD"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/facebook"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/call"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/call"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#FFECF4"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#F9F9FA"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/insta"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/mail"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/link"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#F0FFF3"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/whatsapp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/massage"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/wifi"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                        </LinearLayout>
 
-                </LinearLayout>
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#FFFEE5"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/ggfgd"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/link"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/link"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="60dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="30dp"
-                        android:backgroundTint="#FFEDFC"
-                        app:cardCornerRadius="30dp">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
                             <ImageView
-                                android:id="@+id/lugbml"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:src="@drawable/mail"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                android:src="@drawable/call"/>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/mail"/>
 
-                </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_height="60dp"
+                            android:layout_width="55dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@drawable/circle_bg"
+                            android:backgroundTint="#FFE9EB"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/massage"/>
+
+                        </LinearLayout>
+
+                    </TableRow>
+
+
+                </TableLayout>
+
+
 
             </LinearLayout>
         </ScrollView>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </FrameLayout>
